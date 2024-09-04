@@ -1,0 +1,17 @@
+Personal Information Database
+•	Entity Type: Phone Numbers: Phone Numbers
+•	Entity Type: Email Addresses: Names (First and Last), Email Addresses
+•	Entity Type: Social Security Numbers: Social Security Numbers
+•	Entity Type: Physical Addresses: Country, State, City, Street
+
+Ways to describe each entity
+•	Phone Numbers: Area Codes
+•	Email Addresses: First Names, Last Names, Email extension (gmail.com/yahoo.com)
+•	Social Security Numbers: Number of digits (9)
+•	Physical Addresses: Country, State, City, Street
+
+Use Cases for the Database
+This database can be used for:
+•	Imitating a phonebook
+•	Information dumping
+•	Filtering information based off a name
