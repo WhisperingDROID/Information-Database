@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Information</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vehicle Information Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>VehicleID</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>VIN Number</th>
+                <th>License Plate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Hard-coded rows -->
+            <tr>
+                <td>1</td>
+                <td>Toyota</td>
+                <td>Corolla</td>
+                <td>2015</td>
+                <td>1HGBH41JXMN109186</td>
+                <td>ABC1234</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Ford</td>
+                <td>F-150</td>
+                <td>2018</td>
+                <td>1FTFW1EF3JFB23456</td>
+                <td>XYZ5678</td>
+            </tr>
+            <!-- Dynamic row -->
+            <tr>
+                <td>3</td>
+                <td>{{ make }}</td>
+                <td>{{ model }}</td>
+                <td>{{ year }}</td>
+                <td>{{ vin }}</td>
+                <td>{{ license }}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
