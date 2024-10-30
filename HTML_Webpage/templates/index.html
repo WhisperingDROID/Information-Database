@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Table</title>
+</head>
+<body>
+
+<!-- Instructions Section -->
+<div class="instructions">
+    <h2>How to Use</h2>
+    <p>Fill out the form below to add a new entry into the database.</p>
+    <p><strong>You Must Provide a valid PersonID</strong></p>
+    <p>Valid PersonID's are 1 or 2</p>
+    <p>If you make a mistake while entering the data or wish to make a change, click the <strong>Delete</strong> button to remove it</p>
+    <p>Jeff if your testing this feature please dont remove the initial 3 entries</p>
+</div>
+
+    <h1>Vehicle Table</h1>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>VehicleID</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>VIN Number</th>
+                <th>License Plate</th>
+                <th>PersonID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vehicle in vehicles %}
+            <tr>
+                <td>{{ vehicle[0] }}</td>
+                <td>{{ vehicle[1] }}</td>
+                <td>{{ vehicle[2] }}</td>
+                <td>{{ vehicle[3] }}</td>
+                <td>{{ vehicle[4] }}</td>
+                <td>{{ vehicle[5] }}</td>
+                <td>{{ vehicle[6] }}</td>
+                <td>
+                    <!-- Form for deleting a vehicle -->
+                    <form action="{{ url_for('delete_vehicle', vehicle_id=vehicle[0]) }}" method="POST" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Add New Vehicle</h2>
+    <form action="{{ url_for('add_vehicle') }}" method="POST">
+        <label for="make">Make:</label>
+        <input type="text" id="make" name="make" required><br>
+
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" required><br>
+
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year" required><br>
+
+        <label for="vin_number">VIN Number:</label>
+        <input type="text" id="vin_number" name="vin_number" required><br>
+
+        <label for="license_plate">License Plate:</label>
+        <input type="text" id="license_plate" name="license_plate" required><br>
+
+        <label for="person_id">PersonID:</label>
+        <input type="number" id="person_id" name="person_id" required><br>
+
+        <input type="submit" value="Add Vehicle">
+    </form>
+</body>
+</html>
