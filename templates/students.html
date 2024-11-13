@@ -1,0 +1,6 @@
+<h1>{{ pageTitle }}</h1>
+<ul>
+    {% for student in studentList %}
+    <li><a href="{{ url_for('showSections', student_id=student[0]) }}">{{ student[1] }} {{ student[2] }}</a></li>
+    {% endfor %}
+</ul>

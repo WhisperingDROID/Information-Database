@@ -1,0 +1,32 @@
+<h1>{{ pageTitle }}</h1>
+
+<h2>Registered Sections</h2>
+<ul>
+    {% for section in registeredSections %}
+    <li>
+        {{ section[1] }} ({{ section[2] }})
+        
+        <!-- Display "Unenroll" button only if viewing a specific student's sections -->
+        {% if studentId %}
+        <form action="{{ url_for('unenroll') }}" method="post" style="display:inline;">
+            <input type="hidden" name="student_id" value="{{ studentId }}">
+            <input type="hidden" name="section_id" value="{{ section[0] }}">
+            <button type="submit">Unenroll</button>
+        </form>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+
+{% if availableSections %}
+<h2>Register for a New Section</h2>
+<form method="post">
+    <label for="register_section_id">Choose a section to register:</label>
+    <select name="register_section_id" id="register_section_id">
+        {% for section in availableSections %}
+        <option value="{{ section[0] }}">{{ section[1] }} ({{ section[2] }})</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Register</button>
+</form>
+{% endif %}
