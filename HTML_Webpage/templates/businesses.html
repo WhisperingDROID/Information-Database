@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Businesses</title>
+</head>
+<body>
+    <h1>List of Businesses</h1>
+    <table border="1">
+        <tr>
+            <th>Business ID</th>
+            <th>Business Name</th>
+            <th>Actions</th>
+        </tr>
+        {% for business in businesses %}
+        <tr>
+            <td>{{ business['BusinessID'] }}</td>
+            <td>{{ business['BusinessName'] }}</td>
+            <td>
+                <a href="{{ url_for('business_person', business_id=business['BusinessID']) }}">View Persons</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Back to Vehicles</a>
+</body>
+</html>

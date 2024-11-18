@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Business</title>
+</head>
+<body>
+    <h1>Edit Business</h1>
+    <form action="{{ url_for('edit_business', business_id=business['BusinessID']) }}" method="POST">
+        <label for="business_name">Business Name:</label>
+        <input type="text" id="business_name" name="business_name" value="{{ business['BusinessName'] }}" required>
+        <br><br>
+        <label for="business_type">Business Type:</label>
+        <input type="text" id="business_type" name="business_type" value="{{ business['BusinessType'] }}" required>
+        <br><br>
+        <button type="submit">Update Business</button>
+    </form>
+    <br>
+    <a href="{{ url_for('manage_businesses') }}">Back to Businesses</a>
+</body>
+</html>

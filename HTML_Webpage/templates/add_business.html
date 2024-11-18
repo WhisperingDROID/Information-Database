@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Business</title>
+</head>
+<body>
+    <h1>Add Business</h1>
+    <form action="{{ url_for('add_business') }}" method="POST">
+        <label for="business_name">Business Name:</label>
+        <input type="text" id="business_name" name="business_name" required>
+        <br><br>
+        <label for="business_type">Select Business Type:</label>
+    <select name="business_type" id="business_type" required>
+    <option value="Physical">Physical</option>
+    <option value="Online">Online</option>
+    </select>
+        <br><br>
+        <button type="submit">Add Business</button>
+    </form>
+    <br>
+    <a href="{{ url_for('manage_businesses') }}">Back to Businesses</a>
+</body>
+</html>

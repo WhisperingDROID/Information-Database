@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Person-Business Association</title>
+</head>
+<body>
+    <h1>Add Person-Business Association</h1>
+    <form action="{{ url_for('add_person_business') }}" method="POST">
+        <label for="person_id">Select Person:</label>
+        <select name="person_id" id="person_id">
+            {% for person in persons %}
+            <option value="{{ person['PersonID'] }}">{{ person['FirstName'] }} {{ person['LastName'] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label for="business_id">Select Business:</label>
+        <select name="business_id" id="business_id">
+            {% for business in businesses %}
+            <option value="{{ business['BusinessID'] }}">{{ business['BusinessName'] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label for="association_date">Association Date:</label>
+        <input type="date" id="association_date" name="association_date" required>
+        <br><br>
+        <button type="submit">Add Association</button>
+    </form>
+    <p></p>
+    <a href="/">Back to Home</a>
+</body>
+</html>

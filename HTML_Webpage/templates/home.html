@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Database Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            flex-direction: column;
+        }
+        h1 {
+            margin: 0;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 0.5rem 0;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #f1f1f1;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Information Database</h1>
+    </header>
+    <main>
+        <p>Welcome!</p>
+        <p></p>
+        <p>Select a table to manage:</p>
+        <ul>
+            <li><a href="{{ url_for('showTable') }}">Manage Vehicle Table</a></li>
+            <p></p>
+            <p></p>
+            <li><a href="{{ url_for('list_persons') }}">Manage Persons and Businesses</a></li>
+            <p></p>
+            <p></p>
+            <li><a href="{{ url_for('manage_businesses') }}">Businesses Table</a></li>
+        </ul>
+    </main>
+    <footer>
+        &copy; 2024 Cade's Information Database | All rights reserved.
+    </footer>
+</body>
+</html>

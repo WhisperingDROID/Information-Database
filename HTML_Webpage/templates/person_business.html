@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Businesses for Person {{ person_id }}</title>
+</head>
+<body>
+    <h1>Businesses for Person {{ person_id }}</h1>
+    <table border="1">
+        <tr>
+            <th>Business ID</th>
+            <th>Business Name</th>
+            <th>Association Date</th>
+            <th>Actions</th>
+        </tr>
+        {% for business in businesses %}
+        <tr>
+            <td>{{ business['BusinessID'] }}</td>
+            <td>{{ business['BusinessName'] }}</td>
+            <td>{{ business['AssociationDate'] }}</td>
+            <td>
+                <form action="{{ url_for('remove_person_business', person_id=person_id, business_id=business['BusinessID']) }}" method="POST" style="display:inline;">
+                    <button type="submit">Remove</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{{ url_for('list_persons') }}">Back to Persons</a>
+</body>
+</html>
